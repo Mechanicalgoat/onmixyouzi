@@ -86,24 +86,24 @@
         // ============ 設定エリア（ここを編集して画像とテキストを変更できます） ============
         
         // 表示する画像とテキストのリスト
-const imageList = [
-    { path: "images/1.jpeg", name: "ヴィンテージ！！！" },
-    { path: "images/2.jpeg", name: "メッセージ！！！" },
-    { path: "images/3.jpeg", name: "マッサージ！！！" },
-    { path: "images/4.jpeg", name: "ドクターストレンジ！！！" },
-    { path: "images/5.jpeg", name: "ソーセージ！！！" },
-    { path: "images/6.jpeg", name: "パッケージ！！！" },
-    { path: "images/7.jpeg", name: "金閣寺！！！" },
-    { path: "images/8.jpeg", name: "大文字！！！" },
-    { path: "images/9.jpeg", name: "電子レンジ！！！" },
-    { path: "images/10.jpeg", name: "陰陽師！！！" }
-];
+        const imageList = [
+            { path: "images/1.jpeg", name: "ヴィンテージ！！！" },
+            { path: "images/2.jpeg", name: "メッセージ！！！" },
+            { path: "images/3.jpeg", name: "マッサージ！！！" },
+            { path: "images/4.jpeg", name: "ドクターストレンジ！！！" },
+            { path: "images/5.jpeg", name: "ソーセージ！！！" },
+            { path: "images/6.jpeg", name: "パッケージ！！！" },
+            { path: "images/7.jpeg", name: "金閣寺！！！" },
+            { path: "images/8.jpeg", name: "大文字！！！" },
+            { path: "images/9.jpeg", name: "電子レンジ！！！" },
+            { path: "images/10.jpeg", name: "陰陽師！！！" }
+        ];
         
         // NOボタンを押したときに表示する画像のパス
         const noImagePath = "images/no/no.jpeg";
         
         // NOボタンを押したときに表示するテキスト
-        const noText = "NO!!！！！!";
+        const noText = "NO!!!";
         
         // ============ 以下はプログラム本体（通常は編集不要） ============
         
@@ -139,16 +139,19 @@ const imageList = [
         function loadImage(src) {
             // 一旦プレースホルダーを表示
             mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+            mainImage.alt = "脳内イメージ";
             
             // 画像をプリロード
             const img = new Image();
             img.onload = function() {
                 mainImage.src = src;
+                mainImage.alt = "脳内イメージ";
             };
             img.onerror = function() {
                 console.error("画像読み込みエラー: " + src);
                 // 画像が読み込めない場合はプレースホルダーを表示
                 mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5MkVGRDY5QjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ5MkVGRDZBQjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDkyRUZENjdCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDkyRUZENjhCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4gn/shrAAAAGBQTFRF////////zMzM////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9xgBkaAAAAB5JREFUeNrswYEAAAAAw6D5U9/hCvisQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgBDI+AAGYdyuWAAAAAElFTkSuQmCC";
+                mainImage.alt = "画像読み込みエラー";
             };
             img.src = src;
         }
@@ -160,11 +163,13 @@ const imageList = [
             img.onload = function() {
                 // NO画像が読み込めた場合
                 mainImage.src = noImagePath;
+                mainImage.alt = "NO画像"; // NO画像専用のalt属性を設定
             };
             img.onerror = function() {
                 console.error("NO画像読み込みエラー");
                 // NO画像が読み込めない場合は赤い画像を表示
                 mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5wMJCyU1/cO6jgAAA+JJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8AXXSAAHCHvLnAAAAAElFTkSuQmCC";
+                mainImage.alt = "NO画像読み込みエラー";
             };
             img.src = noImagePath;
         }
@@ -196,7 +201,8 @@ const imageList = [
                 finalText.style.display = "block";
                 
                 // 0.5秒後に元の画像に戻し、最終テキストとリセットボタンを表示
-                setTimeout(function() {
+                setTimeout
+                (function() {
                     loadImage(imageList[currentIndex].path);
                     finalText.textContent = imageList[currentIndex].name;
                     finalText.style.display = "block";
