@@ -58,16 +58,22 @@
         }
         
 #reset-button {
-    position: static;
-    margin-top: 20px;
     background-color: #4caf50;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
+    border-radius: 50px; /* いぼ痔ボタンと同じ丸みを追加 */
+    padding: 15px 30px; /* いぼ痔ボタンと同じサイズ感 */
+    font-size: 20px; /* いぼ痔ボタンと同じフォントサイズ */
     cursor: pointer;
-    font-size: 16px;
     display: none;
+    margin: 0 auto; /* 中央揃え */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影を追加 */
+    transition: transform 0.2s, background-color 0.2s; /* アニメーション追加 */
+}
+
+#reset-button:hover {
+    background-color: #45a049; /* ホバー時の色変更 */
+    transform: scale(1.05); /* ホバー時に少し拡大 */
 }
     </style>
 </head>
