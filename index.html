@@ -23,19 +23,11 @@
             max-width: 600px;
         }
         
-        #image-container {
-            margin-bottom: 20px;
-        }
-        
         #main-image {
             width: 100%;
             max-width: 500px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        #button-container {
-            margin: 20px 0;
         }
         
         #question-button {
@@ -47,12 +39,13 @@
             font-size: 24px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            display: inline-block;
         }
         
         #question-button:hover {
             background-color: #ff5252;
             transform: scale(1.05);
-            transition: transform 0.2s, background-color 0.2s;
         }
         
         #final-text {
@@ -81,40 +74,26 @@
 </head>
 <body>
     <div id="container">
-        <div id="image-container">
-            <img id="main-image" src="https://via.placeholder.com/500x350?text=脳内イメージ" alt="脳内イメージ">
-        </div>
-        
-        <div id="button-container">
+        <img id="main-image" src="https://via.placeholder.com/500x350?text=脳内イメージ" alt="脳内イメージ">
+        <div>
             <button id="question-button">いぼ痔？</button>
         </div>
-        
         <div id="final-text"></div>
-        
         <button id="reset-button">なんか出てきたー！</button>
     </div>
 
     <script>
-        // NO画像のBase64データ
-        const noImageBase64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAHgAoADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=";
-        
-        // 実際のファイルに基づいた画像配列
-        const brainImages = [
-            { path: "images/それが一番大事ー！.jpeg", fileName: "それが一番大事ー！.jpeg" },
-            { path: "images/メッセージ！！.jpeg", fileName: "メッセージ！！.jpeg" },
-            { path: "images/道明寺.jpeg", fileName: "道明寺.jpeg" },
-            { path: "images/陰陽師ー！.jpeg", fileName: "陰陽師ー！.jpeg" },
-            { path: "images/陰陽師ー！！.jpeg", fileName: "陰陽師ー！！.jpeg" }
+        // プレースホルダー画像の配列
+        const images = [
+            { url: "https://via.placeholder.com/500x350?text=脳内1", name: "脳内1.jpg" },
+            { url: "https://via.placeholder.com/500x350?text=脳内2", name: "脳内2.jpg" },
+            { url: "https://via.placeholder.com/500x350?text=脳内3", name: "脳内3.jpg" },
+            { url: "https://via.placeholder.com/500x350?text=脳内4", name: "脳内4.jpg" },
+            { url: "https://via.placeholder.com/500x350?text=脳内5", name: "脳内5.jpg" }
         ];
         
-        // バックアッププレースホルダー画像の配列（画像が読み込めない場合用）
-        const placeholderImages = [
-            { path: "https://via.placeholder.com/500x350?text=脳内1", fileName: "脳内1" },
-            { path: "https://via.placeholder.com/500x350?text=脳内2", fileName: "脳内2" },
-            { path: "https://via.placeholder.com/500x350?text=脳内3", fileName: "脳内3" },
-            { path: "https://via.placeholder.com/500x350?text=脳内4", fileName: "脳内4" },
-            { path: "https://via.placeholder.com/500x350?text=脳内5", fileName: "脳内5" }
-        ];
+        // 真っ赤なNO画像（プレースホルダー）
+        const noImage = "https://via.placeholder.com/500x350/ff0000/ffffff?text=NO!";
         
         // DOM要素の参照を取得
         const mainImage = document.getElementById("main-image");
@@ -123,35 +102,15 @@
         const resetButton = document.getElementById("reset-button");
         
         // 現在選択されているコンテンツのインデックス
-        let currentIndex;
-        // 実際の画像が読み込めるかフラグ
-        let useRealImages = true;
+        let currentIndex = 0;
         // クリック回数
         let clickCount = 0;
         
-        // 画像が読み込めるかテスト
-        function testImageExists(url, callback) {
-            const img = new Image();
-            img.onload = function() { callback(true); };
-            img.onerror = function() { callback(false); };
-            img.src = url;
-        }
-        
         // 画面初期化関数
         function initialize() {
-            // ランダムなコンテンツを選択
-            currentIndex = Math.floor(Math.random() * brainImages.length);
-            
-            // 適切な画像を選択
-            const imageToUse = useRealImages ? brainImages[currentIndex] : placeholderImages[currentIndex];
-            mainImage.src = imageToUse.path;
-            
-            // 画像読み込みエラー処理
-            mainImage.onerror = function() {
-                console.error('画像の読み込みに失敗: ' + this.src);
-                // 実際の画像が読み込めない場合はプレースホルダーを使用
-                this.src = placeholderImages[currentIndex].path;
-            };
+            // ランダムな画像を選択
+            currentIndex = Math.floor(Math.random() * images.length);
+            mainImage.src = images[currentIndex].url;
             
             // ボタン状態をリセット
             questionButton.textContent = "いぼ痔？";
@@ -166,57 +125,50 @@
         }
         
         // 質問ボタンのクリックイベント
-        questionButton.onclick = function() {
+        questionButton.addEventListener("click", function() {
+            console.log("ボタンがクリックされました: " + clickCount);
+            
             if (clickCount === 0) {
                 // 1回目のクリック
-                mainImage.src = noImageBase64;  // NO!画像を表示
+                mainImage.src = noImage;  // NO!画像を表示
                 questionButton.style.display = "none";  // ボタンを一時的に非表示
                 finalText.textContent = "NO!!!";
                 finalText.style.display = "block";
                 
                 // 0.5秒後に元の画像に戻し、ボタンテキストを変更して再表示
                 setTimeout(function() {
-                    const imageToUse = useRealImages ? brainImages[currentIndex] : placeholderImages[currentIndex];
-                    mainImage.src = imageToUse.path;
+                    mainImage.src = images[currentIndex].url;
                     finalText.style.display = "none";
                     questionButton.textContent = "切れ痔？";
-                    questionButton.style.display = "inline-block";  // ボタンを再表示
+                    questionButton.style.display = "inline-block";
                     clickCount = 1;
                 }, 500);
-                
             } else if (clickCount === 1) {
                 // 2回目のクリック
-                mainImage.src = noImageBase64;  // 再度NO!画像を表示
+                mainImage.src = noImage;  // 再度NO!画像を表示
                 questionButton.style.display = "none";  // ボタンを非表示
                 finalText.textContent = "NO!!!";
                 finalText.style.display = "block";
                 
                 // 0.5秒後に元の画像に戻し、最終テキストとリセットボタンを表示
                 setTimeout(function() {
-                    const imageToUse = useRealImages ? brainImages[currentIndex] : placeholderImages[currentIndex];
-                    mainImage.src = imageToUse.path;
-                    finalText.textContent = imageToUse.fileName;
+                    mainImage.src = images[currentIndex].url;
+                    finalText.textContent = images[currentIndex].name;
                     resetButton.style.display = "block";
                 }, 500);
             }
-        };
+        });
         
         // リセットボタンのクリックイベント
-        resetButton.onclick = function() {
+        resetButton.addEventListener("click", function() {
             initialize();
-        };
+        });
         
-        // ページ読み込み時に実行
-        window.onload = function() {
-            console.log('ページを読み込み中...');
-            
-            // まず実際の画像が読み込めるかテスト
-            testImageExists(brainImages[0].path, function(exists) {
-                useRealImages = exists;
-                console.log('実際の画像使用: ' + useRealImages);
-                initialize();
-            });
-        };
+        // ページ読み込み時に初期化を実行
+        window.addEventListener("load", function() {
+            console.log("ページが読み込まれました");
+            initialize();
+        });
     </script>
 </body>
 </html>
