@@ -6,41 +6,39 @@
     <title>なんか出てきたー！！</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            font-family: sans-serif;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            padding: 0;
         }
         
-        #container {
+        .container {
             text-align: center;
-            width: 100%;
-            max-width: 600px;
+            max-width: 500px;
+            padding: 20px;
         }
         
         #main-image {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
         
         #question-button {
-            padding: 15px 30px;
             background-color: #ff6b6b;
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 24px;
+            padding: 15px 30px;
+            font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
-            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
         }
         
         #question-button:hover {
@@ -49,13 +47,13 @@
         }
         
         #final-text {
-            font-size: 36px;
+            font-size: 30px;
             font-weight: bold;
             margin: 20px 0;
-            background-color: #fff;
-            padding: 20px;
+            padding: 15px;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: none;
         }
         
@@ -63,57 +61,66 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 10px 20px;
             background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 4px;
+            padding: 10px 15px;
             cursor: pointer;
-            display: none;
             font-size: 16px;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <img id="main-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8CC+4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5MkVGRDY5QjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ5MkVGRDZBQjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDkyRUZENjdCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDkyRUZENjhCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4uKwgKAAAABlBMVEX////MzMw46rnDAAAAG0lEQVR42uzBgQAAAAIAoP2cFrIQAQAAAICbAY8iAAE+M0vKAAAAAElFTkSuQmCC" alt="脳内イメージ">
-        
-        <button id="question-button">いぼ痔？</button>
-        
+    <div class="container">
+        <img id="main-image" src="images/default.png" alt="脳内イメージ">
+        <div>
+            <button id="question-button">いぼ痔？</button>
+        </div>
         <div id="final-text"></div>
-        
         <button id="reset-button">なんか出てきたー！</button>
     </div>
 
     <script>
-        // 脳内画像の配列
-        const brainImages = [
-            { name: "脳内1.jpg" },
-            { name: "脳内2.jpg" },
-            { name: "脳内3.jpg" },
-            { name: "脳内4.jpg" },
-            { name: "脳内5.jpg" }
+        // ============ 設定エリア（ここを編集して画像とテキストを変更できます） ============
+        
+        // 表示する画像とテキストのリスト
+        const imageList = [
+            { path: "images/脳内1.jpg", name: "脳内1.jpg" },
+            { path: "images/脳内2.jpg", name: "脳内2.jpg" },
+            { path: "images/脳内3.jpg", name: "脳内3.jpg" },
+            { path: "images/脳内4.jpg", name: "脳内4.jpg" },
+            { path: "images/脳内5.jpg", name: "脳内5.jpg" }
         ];
         
-        // 赤色のNO画像（Base64エンコード）
-        const noImageUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAIAAABEtEjdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH5wMJCQ4MTwGIuwAABDFJREFUeNrt1KERwDAQwDD67/mXDghhIU8VIf5d74sxNgANYwKgInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqQgegInQAKkIHoCJ0ACpCB6AidAAqh9AbwGJOxsZ3b/kAAAAASUVORK5CYII=";
+        // NOボタンを押したときに表示する画像のパス
+        const noImagePath = "no/no.jpg";
         
-        // DOM要素
+        // NOボタンを押したときに表示するテキスト
+        const noText = "NO!!!";
+        
+        // ============ 以下はプログラム本体（通常は編集不要） ============
+        
+        // DOMエレメントの参照を取得
         const mainImage = document.getElementById("main-image");
         const questionButton = document.getElementById("question-button");
         const finalText = document.getElementById("final-text");
         const resetButton = document.getElementById("reset-button");
         
-        // 現在のインデックスとクリック回数
+        // 状態変数
         let currentIndex = 0;
         let clickCount = 0;
         
-        // 初期化
+        // 初期化関数
         function initialize() {
-            // ランダムインデックスを設定
-            currentIndex = Math.floor(Math.random() * brainImages.length);
+            // ランダムな画像を選択
+            currentIndex = Math.floor(Math.random() * imageList.length);
             
-            // テキストとボタンの状態を設定
+            // 画像を設定
+            loadImage(imageList[currentIndex].path);
+            
+            // UIの状態をリセット
             questionButton.textContent = "いぼ痔？";
             questionButton.style.display = "inline-block";
             finalText.style.display = "none";
@@ -123,18 +130,54 @@
             clickCount = 0;
         }
         
-        // ボタンクリックイベント
+        // 画像読み込み関数
+        function loadImage(src) {
+            // 一旦プレースホルダーを表示
+            mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+            
+            // 画像をプリロード
+            const img = new Image();
+            img.onload = function() {
+                mainImage.src = src;
+            };
+            img.onerror = function() {
+                console.error("画像読み込みエラー: " + src);
+                // 画像が読み込めない場合はプレースホルダーを表示
+                mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5MkVGRDY5QjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ5MkVGRDZBQjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDkyRUZENjdCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDkyRUZENjhCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4gn/shrAAAAGBQTFRF////////zMzM////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9xgBkaAAAAB5JREFUeNrswYEAAAAAw6D5U9/hCvisQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgBDI+AAGYdyuWAAAAAElFTkSuQmCC";
+            };
+            img.src = src;
+        }
+        
+        // NO画像読み込み関数
+        function loadNoImage() {
+            // NO画像をプリロード
+            const img = new Image();
+            img.onload = function() {
+                // NO画像が読み込めた場合
+                mainImage.src = noImagePath;
+            };
+            img.onerror = function() {
+                console.error("NO画像読み込みエラー");
+                // NO画像が読み込めない場合は赤い画像を表示
+                mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5wMJCyU1/cO6jgAAA+JJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8AXXSAAHCHvLnAAAAAElFTkSuQmCC";
+            };
+            img.src = noImagePath;
+        }
+        
+        // 質問ボタンのクリックイベント
         questionButton.addEventListener("click", function() {
+            console.log("ボタンクリック: " + clickCount);
+            
             if (clickCount === 0) {
-                // 最初のクリック
-                mainImage.src = noImageUrl; // 赤いNO画像を表示
+                // 1回目のクリック
+                loadNoImage(); // NO!画像を表示
                 questionButton.style.display = "none";
-                finalText.textContent = "NO!!!";
+                finalText.textContent = noText;
                 finalText.style.display = "block";
                 
-                // 0.5秒後に元に戻す
+                // 0.5秒後に元の画像に戻し、ボタンテキストを変更
                 setTimeout(function() {
-                    mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8CC+4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5MkVGRDY5QjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ5MkVGRDZBQjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDkyRUZENjdCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDkyRUZENjhCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4uKwgKAAAABlBMVEX////MzMw46rnDAAAAG0lEQVR42uzBgQAAAAIAoP2cFrIQAQAAAICbAY8iAAE+M0vKAAAAAElFTkSuQmCC";
+                    loadImage(imageList[currentIndex].path);
                     finalText.style.display = "none";
                     questionButton.textContent = "切れ痔？";
                     questionButton.style.display = "inline-block";
@@ -142,15 +185,15 @@
                 }, 500);
             } else if (clickCount === 1) {
                 // 2回目のクリック
-                mainImage.src = noImageUrl; // 再度NO画像を表示
+                loadNoImage(); // 再度NO!画像を表示
                 questionButton.style.display = "none";
-                finalText.textContent = "NO!!!";
+                finalText.textContent = noText;
                 finalText.style.display = "block";
                 
-                // 0.5秒後に元に戻し、最終テキストを表示
+                // 0.5秒後に元の画像に戻し、最終テキストとリセットボタンを表示
                 setTimeout(function() {
-                    mainImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8CC+4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5MkVGRDY5QjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ5MkVGRDZBQjFEQjExRTlBRkE4QzU1OUE5RTMwM0I0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDkyRUZENjdCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDkyRUZENjhCMURCMTFFOUFGQThDNTU5QTlFMzAzQjQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4uKwgKAAAABlBMVEX////MzMw46rnDAAAAG0lEQVR42uzBgQAAAAIAoP2cFrIQAQAAAICbAY8iAAE+M0vKAAAAAElFTkSuQmCC";
-                    finalText.textContent = brainImages[currentIndex].name;
+                    loadImage(imageList[currentIndex].path);
+                    finalText.textContent = imageList[currentIndex].name;
                     finalText.style.display = "block";
                     resetButton.style.display = "block";
                 }, 500);
@@ -161,8 +204,8 @@
         resetButton.addEventListener("click", initialize);
         
         // ページ読み込み時に初期化
-        window.addEventListener("DOMContentLoaded", function() {
-            console.log("ページが読み込まれました");
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("ページ読み込み完了");
             initialize();
         });
     </script>
